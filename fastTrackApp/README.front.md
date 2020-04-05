@@ -35,3 +35,6 @@ IMAGES FREE
     https://www.pexels.com/es-es/foto/ciudad-paisaje-punto-de-referencia-calle-3254729/
 
 https://www.pexels.com/es-es/foto/antiguo-arquitectura-arquitectura-historica-calle-415980/
+
+
+https://www.pexels.com/es-es/foto/arquitectura-centrico-centro-de-la-ciudad-cielo-670261/
