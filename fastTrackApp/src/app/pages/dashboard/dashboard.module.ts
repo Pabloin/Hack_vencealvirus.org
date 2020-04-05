@@ -28,11 +28,10 @@ import { FormsModule } from '../forms/forms.module'
     NbIconModule,
     NbButtonModule,
     ThemeModule,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     DashboardComponent,
-    
   ],
 })
 export class DashboardModule { }
