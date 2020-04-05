@@ -5,6 +5,7 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
+  NbCheckboxModule,
   NbTabsetModule,
   NbUserModule,
   NbRadioModule,
@@ -23,6 +24,7 @@ import { AnalizaComponent } from './analiza/analiza.component'
   imports: [
     CommonModule,
     NbCardModule,
+    NbCheckboxModule,
     NbUserModule,
     NbButtonModule,
     NbTabsetModule,
