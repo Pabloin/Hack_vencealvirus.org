@@ -5,6 +5,7 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
+  NbCheckboxModule,
   NbTabsetModule,
   NbUserModule,
   NbRadioModule,
@@ -14,12 +15,16 @@ import {
 } from '@nebular/theme';
 
 import { FormsRoutingModule } from './forms-routing.module';
-import { ButtonsComponent } from './buttons/buttons.component'
+import { ButtonsComponent } from './buttons/buttons.component';
+import { BuscaComponent } from './busca/busca.component';
+import { SubeComponent } from './sube/sube.component';
+import { AnalizaComponent } from './analiza/analiza.component'
 
 @NgModule({
   imports: [
     CommonModule,
     NbCardModule,
+    NbCheckboxModule,
     NbUserModule,
     NbButtonModule,
     NbTabsetModule,
@@ -33,9 +38,15 @@ import { ButtonsComponent } from './buttons/buttons.component'
   ],
   declarations: [
     ButtonsComponent,
+    BuscaComponent,
+    SubeComponent,
+    AnalizaComponent,
   ],
   exports: [
     ButtonsComponent,
+    BuscaComponent,
+    SubeComponent,
+    AnalizaComponent,
   ],
 })
 export class FormsModule { }
