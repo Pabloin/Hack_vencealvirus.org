@@ -15,7 +15,6 @@ import {
 } from '@nebular/theme';
 
 import { FormsRoutingModule } from './forms-routing.module';
-import { ButtonsComponent } from './buttons/buttons.component';
 import { BuscaComponent } from './busca/busca.component';
 import { SubeComponent } from './sube/sube.component';
 import { AnalizaComponent } from './analiza/analiza.component';
@@ -38,14 +37,12 @@ import { IniciaComponent } from './inicia/inicia.component'
     FormsRoutingModule,
   ],
   declarations: [
-    ButtonsComponent,
     BuscaComponent,
     SubeComponent,
     AnalizaComponent,
     IniciaComponent,
   ],
   exports: [
-    ButtonsComponent,
     BuscaComponent,
     SubeComponent,
     AnalizaComponent,
