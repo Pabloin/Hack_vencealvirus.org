@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import {
   NbActionsModule,
   NbButtonModule,
@@ -11,12 +13,12 @@ import {
   NbIconModule,
 } from '@nebular/theme';
 
-import { ThemeModule } from '../../@theme/theme.module';
-import { DashboardComponent } from './dashboard.component';
-import { FormsModule } from '../forms/forms.module'
+import { FormsRoutingModule } from './forms-routing.module';
+import { ButtonsComponent } from './buttons/buttons.component'
 
 @NgModule({
   imports: [
+    CommonModule,
     NbCardModule,
     NbUserModule,
     NbButtonModule,
@@ -27,11 +29,13 @@ import { FormsModule } from '../forms/forms.module'
     NbListModule,
     NbIconModule,
     NbButtonModule,
-    ThemeModule,
-    FormsModule,
+    FormsRoutingModule,
   ],
   declarations: [
-    DashboardComponent,
+    ButtonsComponent,
+  ],
+  exports: [
+    ButtonsComponent,
   ],
 })
-export class DashboardModule { }
+export class FormsModule { }
