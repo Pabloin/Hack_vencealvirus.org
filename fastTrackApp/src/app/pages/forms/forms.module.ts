@@ -18,7 +18,8 @@ import { FormsRoutingModule } from './forms-routing.module';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { BuscaComponent } from './busca/busca.component';
 import { SubeComponent } from './sube/sube.component';
-import { AnalizaComponent } from './analiza/analiza.component'
+import { AnalizaComponent } from './analiza/analiza.component';
+import { IniciaComponent } from './inicia/inicia.component'
 
 @NgModule({
   imports: [
@@ -41,12 +42,14 @@ import { AnalizaComponent } from './analiza/analiza.component'
     BuscaComponent,
     SubeComponent,
     AnalizaComponent,
+    IniciaComponent,
   ],
   exports: [
     ButtonsComponent,
     BuscaComponent,
     SubeComponent,
     AnalizaComponent,
+    IniciaComponent,
   ],
 })
 export class FormsModule { }
