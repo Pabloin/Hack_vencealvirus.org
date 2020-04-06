@@ -18,7 +18,7 @@ https://pabloinchausti135051.invisionapp.com/public/share/MF133ZMTW5#/screens
 Sigue el Workflow
 
 <a target="_blank" href="https://pabloinchausti135051.invisionapp.com/public/share/MF133ZMTW5#/screens">
-  <img src="../Desgin CovidOmics App v1.0.png"/>
+  <img src="Desgin CovidOmics App v1.0.png"/>
 </a>
 
 Equipo:
