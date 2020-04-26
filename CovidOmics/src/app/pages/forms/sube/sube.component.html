@@ -10,10 +10,10 @@
   <nb-card >
     <nb-tabset fullWidth>
 
-      <nb-tab tabTitle="Dataset" >
+      <nb-tab tabTitle="{{ txt_dataset[idioma] }}" >
 
         <nb-card *ngIf="!uploadDatasetOk">
-          <nb-card-header>Subir Dataset</nb-card-header>
+          <nb-card-header>{{ txt_titulo[idioma] }}</nb-card-header>
           <nb-card-body>
 
               <div class="form-group row">
@@ -58,7 +58,7 @@
 
               <div class="form-group row">
                 <div class="offset-sm-3 col-sm-9">
-                  <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doUploadDataset()">Subir</button>
+                  <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doUploadDataset()">{{ txt_subir[idioma] }}</button>
                 </div>
               </div>
           </nb-card-body>
@@ -68,22 +68,22 @@
           <nb-card-body>
             <div class="form-group row">
               <div class="col-sm-9">
-                Dataset recibido ok
+                {{ txt_dataset_subido_ok[idioma] }}
               </div>
             </div>
             <br><br>
             <div class="offset-sm-3 col-sm-9">
-              <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doReset()">Subir Otro Dataset</button>
+              <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doReset()">{{ txt_subir_otro_ds[idioma] }}</button>
             </div>
          </nb-card-body> 
         </nb-card>
 
       </nb-tab>
 
-      <nb-tab tabTitle="Enlaces" >
+      <nb-tab tabTitle="{{ txt_links[idioma] }}" >
 
             <nb-card *ngIf="!uploadEnlaceOk">
-              <nb-card-header>Enviar enlace</nb-card-header>
+              <nb-card-header>{{ txt_titulo_enlace[idioma] }}</nb-card-header>
               <nb-card-body>
 
 
@@ -130,7 +130,7 @@
 
                   <div class="form-group row">
                     <div class="offset-sm-3 col-sm-9">
-                      <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doUploadEnlace()">Subir</button>
+                      <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doUploadEnlace()">{{ txt_subir[idioma] }}</button>
                     </div>
                   </div>
               </nb-card-body>
@@ -141,13 +141,13 @@
             <nb-card-body>
               <div class="form-group row">
                 <div class="col-sm-9">
-                  Enlace recibido ok
+                  {{ txt_enalce_subido_ok[idioma]}}
                 </div>
               </div>
 
               <br><br>
               <div class="offset-sm-3 col-sm-9">
-                <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doReset()">Subir otro enlace</button>
+                <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doReset()">{{ txt_subir_otro[idioma] }}</button>
               </div>
             </nb-card-body>
           </nb-card>
