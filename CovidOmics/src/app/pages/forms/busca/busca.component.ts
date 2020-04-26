@@ -3,12 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NbComponentShape, NbComponentSize, NbComponentStatus } from '@nebular/theme';
 
+const LANG_ES = 0;
+const LANG_EN = 1;
+
 @Component({
   selector: 'busca',
   templateUrl: './busca.component.html',
   styleUrls: ['./busca.component.scss']
 })
 export class BuscaComponent implements OnInit {
+
+  idioma = LANG_EN
+
+  txt_SIMPLE = [ "Simple", "Simple" ];
+  txt_ADVANCED = [ "Avanzado", "Advanced" ];
+
+  txt_RESULTS= [ "Resultados sobre:", "Results about:" ];
+  txt_BUSCAR_DS= [ "Buscar Dataset:", "Buscar Dataset:" ];
 
   statuses: NbComponentStatus[] = [ 'primary', 'success', 'info', 'warning', 'danger' ];
   shapes: NbComponentShape[] = [ 'rectangle', 'semi-round', 'round' ];
@@ -35,7 +46,7 @@ export class BuscaComponent implements OnInit {
 
   doSearchBasico() {
     if (this.textoBasico === "") {
-      this.placeHolderBasico = "ingrese un texto"
+      this.placeHolderBasico = (this.idioma === LANG_EN) ? "Enter a text" : "ingrese un texto";
     } else {
       this.searchingBasico = !this.searchingBasico;
     }
@@ -47,9 +58,9 @@ export class BuscaComponent implements OnInit {
       this.textoAvDesc = "";
       this.textoAvCat = "";
 
-      this.textoAvTituloPCH = "ingrese un texto";
-      this.textoAvCatPCH = "ingrese una categoria";
-      this.textoAvDescPCH = "ingrese un descripcion";
+      this.textoAvTituloPCH = (this.idioma === LANG_EN) ? "Enter a text" : "ingrese un texto";
+      this.textoAvCatPCH = (this.idioma === LANG_EN) ? "Enter a Category" : "ingrese una categoria";
+      this.textoAvDescPCH = (this.idioma === LANG_EN) ? "Add a Description" : "ingrese un descripcion";
     } else {
       this.searchingAvanzado = !this.searchingAvanzado;
     }

@@ -11,7 +11,7 @@
     <nb-tabset fullWidth>
 
 
-      <nb-tab tabTitle="Simple">
+      <nb-tab tabTitle="{{ txt_SIMPLE[idioma] }}">
           
             <div class="col-sm-9">
 
@@ -30,11 +30,12 @@
       </nb-tab>
 
 
-      <nb-tab tabTitle="Avanzado">
+      
+        <nb-tab tabTitle="{{ txt_ADVANCED[idioma] }}">
 
-
+          
             <nb-card>
-              <nb-card-header>Buscar Dataset</nb-card-header>
+              <nb-card-header> {{ txt_BUSCAR_DS[idioma] }} </nb-card-header>
               <nb-card-body>
 
 
@@ -99,7 +100,7 @@
   <div class="infinite-cards row"  *ngIf="searchingBasico">
     <div class="col-md-12 col-lg-6 col-xxxl-6">
       <nb-card class="own-scroll">
-        <nb-card-header>Resultados sobre:
+        <nb-card-header>{{ txt_RESULTS[idioma] }}
           <span class="resaltado">
             {{ textoBasico }}
           </span>
@@ -121,7 +122,7 @@
   <div class="infinite-cards row" *ngIf="searchingAvanzado">
     <div class="col-md-12 col-lg-6 col-xxxl-6">
       <nb-card class="own-scroll">
-        <nb-card-header>Resultados para:
+        <nb-card-header>{{ txt_RESULTS[idioma] }}
           <span class="resaltado">
             {{ textoAvTitulo }}, {{ textoAvDesc }}, {{ textoAvCat }}  
           </span>
