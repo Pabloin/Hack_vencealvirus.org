@@ -9,137 +9,145 @@
   <nb-card >
     <nb-tabset fullWidth>
 
-      <nb-tab tabTitle="Dataset">
+      <nb-tab tabTitle="Dataset" >
 
-
-
-        <nb-card>
+        <nb-card *ngIf="!uploadDatasetOk">
           <nb-card-header>Subir Dataset</nb-card-header>
-
-                
           <nb-card-body>
-            <form class="form-horizontal">
 
               <div class="form-group row">
                 <div class="col-sm-9">
-                  <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Nombre">
+                  <input type="text" nbInput fullWidth 
+                           id="datasetXtextoNombre"
+                  placeholder="{{ textoNombrePCH }}"
+                      [value]="textoNombre" (input)="textoNombre = $event.target.value"
+                  >
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-sm-9">
-                  <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Categoría">
+                  <input type="text" nbInput fullWidth
+                           id="datasetXtextoCat"
+                  placeholder="{{ textoCatPCH }}"
+                      [value]="textoCat" (input)="textoCat = $event.target.value"
+                   >
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-sm-9">
-                  <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Descripción">
+                  <input type="text" nbInput fullWidth
+                           id="datasetXtextoDesc"
+                  placeholder="{{ textoDescPCH }}"
+                      [value]="textoDesc" (input)="textoDesc = $event.target.value"
+                  >
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-sm-9">
-                  <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Archivo">
+                  <input type="text" nbInput fullWidth 
+                  id="datasetXtextoDatasetArch"
+                  placeholder="{{ textoDatasetArchPCH }}"
+                      [value]="textoDatasetArch" (input)="textoDatasetArch = $event.target.value"
+                  >
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="offset-sm-3 col-sm-9">
-                  <button type="submit" nbButton status="" [size]="sizes[0]">Subir</button>
+                  <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doUploadDataset()">Subir</button>
                 </div>
               </div>
-
-
-            </form>
           </nb-card-body>
-        
-          
-          <!-- 
-            <nb-card-body>
-            <form class="form-horizontal">
-
-              <div class="form-group row">
-                <div class="col-sm-9">
-                  Dataset recibido ok
-                </div>
-              </div>
-
-              
-              <br><br>
-              <div class="offset-sm-3 col-sm-9">
-                <button type="submit" nbButton status="" [size]="sizes[0]">Subir otro</button>
-              </div>
-            </form>
-          </nb-card-body> 
-          -->
-
-
-
-
         </nb-card>
+          
+        <nb-card *ngIf="uploadDatasetOk">
+          <nb-card-body>
+            <div class="form-group row">
+              <div class="col-sm-9">
+                Dataset recibido ok
+              </div>
+            </div>
+            <br><br>
+            <div class="offset-sm-3 col-sm-9">
+              <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doReset()">Subir Otro Dataset</button>
+            </div>
+         </nb-card-body> 
+        </nb-card>
+
       </nb-tab>
 
-      <nb-tab tabTitle="Enlaces">
+      <nb-tab tabTitle="Enlaces" >
 
-            <!-- 
-            <nb-card>
+            <nb-card *ngIf="!uploadEnlaceOk">
               <nb-card-header>Enviar enlace</nb-card-header>
               <nb-card-body>
-                <form class="form-horizontal">
 
-                  <div class="form-group row">
-                    <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Nombre">
-                    </div>
+
+                <div class="form-group row">
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth 
+                             id="enlaceXtextoNombre"
+                    placeholder="{{ textoNombrePCH }}"
+                        [value]="textoNombre" (input)="textoNombre = $event.target.value"
+                    >
                   </div>
-
-                  <div class="form-group row">
-                    <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Categoría">
-                    </div>
+                </div>
+  
+                <div class="form-group row">
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth
+                             id="enlaceXtextoCat"
+                    placeholder="{{ textoCatPCH }}"
+                        [value]="textoCat" (input)="textoCat = $event.target.value"
+                     >
                   </div>
-
-                  <div class="form-group row">
-                    <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Descripción">
-                    </div>
+                </div>
+  
+                <div class="form-group row">
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth
+                             id="enlaceXtextoDesc"
+                    placeholder="{{ textoDescPCH }}"
+                        [value]="textoDesc" (input)="textoDesc = $event.target.value"
+                    >
                   </div>
+                </div>
+
 
                   <div class="form-group row">
                     <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Enlace">
+                      <input type="text" nbInput fullWidth
+                                  id="enlaceXtextoEnlaceNombre"
+                        placeholder="{{ textoEnlaceNombrePCH }}"
+                            [value]="textoEnlaceNombre" (input)="textoEnlaceNombre = $event.target.value"
+                        >
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <div class="offset-sm-3 col-sm-9">
-                      <button type="submit" nbButton status="" [size]="sizes[0]">Subir</button>
+                      <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doUploadEnlace()">Subir</button>
                     </div>
                   </div>
-
-
-                </form>
               </nb-card-body>
-            </nb-card> -->
+            </nb-card>
 
 
-          <nb-card>
+          <nb-card  *ngIf="uploadEnlaceOk">
             <nb-card-body>
-              <form class="form-horizontal">
-  
-                <div class="form-group row">
-                  <div class="col-sm-9">
-                    Enlace recibido ok
-                  </div>
+              <div class="form-group row">
+                <div class="col-sm-9">
+                  Enlace recibido ok
                 </div>
-  
-                
-                <br><br>
-                <div class="offset-sm-3 col-sm-9">
-                  <button type="submit" nbButton status="" [size]="sizes[0]">Subir otro</button>
-                </div>
-              </form>
+              </div>
+
+              <br><br>
+              <div class="offset-sm-3 col-sm-9">
+                <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doReset()">Subir otro enlace</button>
+              </div>
             </nb-card-body>
           </nb-card>
 

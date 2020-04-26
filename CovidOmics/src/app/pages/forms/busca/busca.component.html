@@ -10,42 +10,22 @@
   <nb-card >
     <nb-tabset fullWidth>
 
-      <!-- <nb-tab tabTitle="Simple">
-
-        <form class="form-horizontal">
-
-
-          <div class="form-group row">
-
-            <div class="col-sm-9">
-              <input type="text" nbInput 
-                     id="inputEmail3" width="90%" 
-                    placeholder="Gene expression in Covid patients">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="offset-sm-3 col-sm-9">
-              <button type="submit" nbButton status="" [size]="sizes[0]">Search</button>
-            </div>
-          </div>
-
-
-        </form>
-      </nb-tab> -->
-
 
       <nb-tab tabTitle="Simple">
           
             <div class="col-sm-9">
+
               <input type="text" nbInput 
                      id="inputEmail3" width="90%" 
-                    placeholder="Gene expression in Covid patients"> 
+                    placeholder="{{ placeHolderBasico }}"
+                          [value]="textoBasico" (input)="textoBasico = $event.target.value"
+                    > 
                     &nbsp;
                     <br><br>
-                    <button type="submit" nbButton status="" [size]="sizes[0]">Search</button>
+                    <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doSearchBasico()">Search</button>
+                    &nbsp;
+                    <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doClear()">Clear</button>
             </div>
-
 
       </nb-tab>
 
@@ -56,13 +36,16 @@
             <nb-card>
               <nb-card-header>Buscar Dataset</nb-card-header>
               <nb-card-body>
-                <form class="form-horizontal">
+
 
 
                   <div class="form-group row">
                     <!-- <label for="inputEmail3" class="label col-sm-3 form-control-label">Email</label> -->
                     <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputEmail3" placeholder="Título">
+                      <input type="text" nbInput fullWidth id="inputTitulo" 
+                      placeholder="{{ textoAvTituloPCH }}"
+                      [value]="textoAvTitulo" (input)="textoAvTitulo = $event.target.value"
+                      >
                     </div>
                   </div>
 
@@ -70,14 +53,20 @@
                   <div class="form-group row">
                     <!-- <label for="inputPassword3" class="label col-sm-3 form-control-label">Password</label> -->
                     <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Descripción">
+                      <input type="text" nbInput fullWidth id="inputDesc"
+                      placeholder="{{ textoAvDescPCH }}"
+                      [value]="textoAvDesc" (input)="textoAvDesc = $event.target.value"
+                      >
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <!-- <label for="inputPassword3" class="label col-sm-3 form-control-label">Password</label> -->
                     <div class="col-sm-9">
-                      <input type="text" nbInput fullWidth id="inputPassword3" placeholder="Categoría">
+                      <input type="text" nbInput fullWidth id="inputCategoria"
+                      placeholder="{{ textoAvCatPCH }}"
+                      [value]="textoAvCat" (input)="textoAvCat = $event.target.value"
+                      >
                     </div>
                   </div>
 
@@ -85,12 +74,13 @@
 
                   <div class="form-group row">
                     <div class="offset-sm-3 col-sm-9">
-                      <button type="submit" nbButton status="" [size]="sizes[0]">Search</button>
+                      <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doSearchAvanzado()">Search</button>
+                      &nbsp;
+                      <button type="submit" nbButton status="" [size]="sizes[0]" (click)="doClear()">Clear</button>
                     </div>
                   </div>
 
 
-                </form>
               </nb-card-body>
             </nb-card>
 
@@ -105,31 +95,15 @@
 
 
 
-
-  <!-- <div class="infinite-cards row">
+  
+  <div class="infinite-cards row"  *ngIf="searchingBasico">
     <div class="col-md-12 col-lg-6 col-xxxl-6">
       <nb-card class="own-scroll">
-        <nb-card-header>Resultados:</nb-card-header>
-        <nb-list>
-          <nb-list-item>
-            BASES DE DATOS TRATAMIENTOS COVID-19 <a href="#">download</a>
-          </nb-list-item>
-          <nb-list-item>
-            VACUNAS COVID-19 <a href="#">download</a>
-          </nb-list-item>
-        </nb-list>
-      </nb-card>
-    </div>
-  </div> -->
-
-
-  
-
-  
-    <div class="infinite-cards row">
-    <div class="col-md-12 col-lg-6 col-xxxl-6">
-      <nb-card class="own-scroll">
-        <nb-card-header>Resultados:</nb-card-header>
+        <nb-card-header>Resultados sobre:
+          <span class="resaltado">
+            {{ textoBasico }}
+          </span>
+        </nb-card-header>
         <nb-list>
           <nb-list-item>
             Ensayos Clínicos COVID-19 <br>
@@ -144,6 +118,24 @@
     </div>
   </div> 
 
-
+  <div class="infinite-cards row" *ngIf="searchingAvanzado">
+    <div class="col-md-12 col-lg-6 col-xxxl-6">
+      <nb-card class="own-scroll">
+        <nb-card-header>Resultados para:
+          <span class="resaltado">
+            {{ textoAvTitulo }}, {{ textoAvDesc }}, {{ textoAvCat }}  
+          </span>
+        </nb-card-header>
+        <nb-list>
+          <nb-list-item>
+            BASES DE DATOS TRATAMIENTOS COVID-19 <a href="#">download</a>
+          </nb-list-item>
+          <nb-list-item>
+            VACUNAS COVID-19 <a href="#">download</a>
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </div>
+  </div>
 
 </div>
