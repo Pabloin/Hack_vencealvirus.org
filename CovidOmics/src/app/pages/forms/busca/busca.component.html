@@ -10,15 +10,17 @@
   <nb-card >
     <nb-tabset fullWidth>
 
-      <nb-tab tabTitle="Simple">
+      <!-- <nb-tab tabTitle="Simple">
 
         <form class="form-horizontal">
 
 
           <div class="form-group row">
-            <!-- <label for="inputEmail3" class="label col-sm-3 form-control-label">Email</label> -->
+
             <div class="col-sm-9">
-              <input type="text" nbInput fullWidth id="inputEmail3" placeholder="Texto">
+              <input type="text" nbInput 
+                     id="inputEmail3" width="90%" 
+                    placeholder="Gene expression in Covid patients">
             </div>
           </div>
 
@@ -30,7 +32,23 @@
 
 
         </form>
+      </nb-tab> -->
+
+
+      <nb-tab tabTitle="Simple">
+          
+            <div class="col-sm-9">
+              <input type="text" nbInput 
+                     id="inputEmail3" width="90%" 
+                    placeholder="Gene expression in Covid patients"> 
+                    &nbsp;
+                    <br><br>
+                    <button type="submit" nbButton status="" [size]="sizes[0]">Search</button>
+            </div>
+
+
       </nb-tab>
+
 
       <nb-tab tabTitle="Avanzado">
 
@@ -107,7 +125,7 @@
 
   
 
-  <!-- 
+  
     <div class="infinite-cards row">
     <div class="col-md-12 col-lg-6 col-xxxl-6">
       <nb-card class="own-scroll">
@@ -125,7 +143,7 @@
       </nb-card>
     </div>
   </div> 
--->
+
 
 
 </div>
