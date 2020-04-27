@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NbComponentShape, NbComponentSize, NbComponentStatus } from '@nebular/theme';
 
+const LANG_ES = 0;
+const LANG_EN = 1;
+
 @Component({
   selector: 'sube',
   templateUrl: './sube.component.html',
@@ -11,6 +14,20 @@ export class SubeComponent implements OnInit {
   statuses: NbComponentStatus[] = [ 'primary', 'success', 'info', 'warning', 'danger' ];
   shapes: NbComponentShape[] = [ 'rectangle', 'semi-round', 'round' ];
   sizes: NbComponentSize[] = [ 'tiny', 'small', 'medium', 'large', 'giant' ];
+
+  idioma = LANG_EN
+
+  txt_dataset = [ "Dataset", "Dataset" ];
+  txt_links = [ "enlaces", "links" ];
+  txt_titulo = [ "Subir Dataset", "Upload Dataset" ];
+  txt_subir = [ "subir", "upload" ];
+
+  txt_titulo_enlace = [ "Enviar Enlace", "Send a link"];
+  txt_subir_otro = [ "Subir otro enlace", "Upload another link"];
+  txt_subir_otro_ds = [ "Subir otro Dataset", "Upload another Dataset"];
+
+  txt_enalce_subido_ok = [ "Enlace recibido ok", "Link Upload Ok" ]; 
+  txt_dataset_subido_ok = [ "Dataset recibido ok", "Dataset Upload Ok" ]; 
 
   textoNombre: string;
   textoCat: string;
@@ -41,10 +58,10 @@ export class SubeComponent implements OnInit {
       && this.textoDesc === ""
       && this.textoDatasetArch === "") {
 
-      this.textoNombrePCH = "ingrese un Nombre";
-      this.textoCatPCH = "ingrese una Categoría ";
-      this.textoDescPCH = "ingrese una Descripción ";
-      this.textoDatasetArchPCH = "ingrese un Archivo";
+      this.textoNombrePCH = (this.idioma === LANG_EN) ? "Enter the Name" : "ingrese un Nombre";
+      this.textoCatPCH = (this.idioma === LANG_EN) ? "Enter a Category" : "ingrese una Categoría ";
+      this.textoDescPCH = (this.idioma === LANG_EN) ? "Enter a Description" : "ingrese una Descripción ";
+      this.textoDatasetArchPCH = (this.idioma === LANG_EN) ? "Add a File" : "ingrese un Archivo";
     } else {
       this.uploadDatasetOk = !this.uploadDatasetOk;
     }
@@ -56,10 +73,10 @@ export class SubeComponent implements OnInit {
       && this.textoDesc === ""
       && this.textoEnlaceNombre === "") {
 
-        this.textoNombrePCH = "ingrese un Nombre";
-        this.textoCatPCH = "ingrese una Categoría ";
-        this.textoDescPCH = "ingrese una Descripción ";
-        this.textoEnlaceNombre = "ingrese el enlace"
+        this.textoNombrePCH = (this.idioma === LANG_EN) ? "Enter the Name" : "ingrese un Nombre";
+        this.textoCatPCH = (this.idioma === LANG_EN) ? "Enter a Category" : "ingrese una Categoría ";
+        this.textoDescPCH = (this.idioma === LANG_EN) ? "Enter a Description" : "ingrese una Descripción ";
+        this.textoEnlaceNombre = (this.idioma === LANG_EN) ? "Add the link" : "ingrese el enlace"
     } else {
       this.uploadEnlaceOk = !this.uploadEnlaceOk;
     }
