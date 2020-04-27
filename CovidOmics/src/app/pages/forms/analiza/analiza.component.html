@@ -1,36 +1,67 @@
 
   <!-- <img src="assets/images/banner-madrid-03-analiza.png" alt="" width="100%"> -->
+ 
+  <!-- <img src="assets/images/banner-madrid-11-search.png" alt="" width="100%"> -->
+ 
   <img src="assets/images/banner-madrid-13-analyce.png" alt="" width="100%">
   <br>
 &nbsp;
 
 <br>
 <div class="col-12">
-  <nb-card >
+
+  <nb-card *ngIf="pattern">
     <nb-tabset fullWidth>
 
       <nb-tab tabTitle="Tiende">
-        {{ txt_titulo1[idioma] }}
-        <br><br>
+        {{ txt_titulo1[idioma] }} <br><br>
         <img src="assets/images/analiza-01-tendencia.png" id="image-center" alt="" width="100%">
       </nb-tab>
 
       <nb-tab tabTitle="Sector">
-        {{ txt_titulo2[idioma] }}
-        <br><br>
+        {{ txt_titulo2[idioma] }} <br><br>
         <img src="assets/images/analiza-02-bars.png" id="image-center" alt="" width="100%">
-
       </nb-tab>
 
       <nb-tab tabTitle="Geo">
-        {{ txt_titulo3[idioma] }}
-        <br><br>
+        {{ txt_titulo3[idioma] }} <br><br>
         <img src="assets/images/analiza-03-geo.png" id="image-center" alt="" width="90%">
-
-
       </nb-tab>
 
     </nb-tabset>
+  </nb-card>
+
+  <nb-card *ngIf="!pattern">
+
+
+
+    <!-- <span id="step-00">
+      <img src="assets/images/analyze_wizard_00.png" id="image-center-b" alt="" width="95%">
+      
+    </span> -->
+
+    <!-- <span id="step-01">
+      <img src="assets/images/analyze_wizard_01.png" id="image-center-b" alt="" width="95%">
+      
+    </span> -->
+
+
+    <span id="step-02">
+      <img src="assets/images/analyze_wizard_02.png" id="image-center-b" alt="" width="95%">
+      
+    </span>
+
+    <!-- <span id="step-03">
+      <img src="assets/images/analyze_wizard_03.png" id="image-center-b" alt="" width="95%">
+      <img src="assets/images/analiza-use-case-04b.png" id="image-center-a" alt="" width="100%">
+    </span> -->
+
+    <!-- 
+    <span id="step-04">
+      <img src="assets/images/analyze_wizard_04.png" id="image-center-b" alt="" width="95%">
+      <img src="assets/images/analiza-use-case-05.png" id="image-center-a" alt="" width="100%">
+    </span> -->
+
   </nb-card>
 
 </div>
